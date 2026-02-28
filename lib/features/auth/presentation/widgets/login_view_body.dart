@@ -9,6 +9,7 @@ import 'package:mini_store/core/widgets/custom_button.dart';
 import 'package:mini_store/core/widgets/custom_loading.dart';
 import 'package:mini_store/core/widgets/custom_snack_bar.dart';
 import 'package:mini_store/core/widgets/height_sized.dart';
+import 'package:mini_store/features/auth/presentation/views/login_phone_view.dart';
 import 'package:mini_store/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:mini_store/features/auth/presentation/widgets/custom_text_rich.dart';
 import 'package:mini_store/features/main/presentation/views/main_view.dart';
@@ -103,12 +104,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             isLoading
                 ? const CustomLoading()
                 : CustomButton(title: 'تسجيل الدخول', onPressed: _login),
-            HeightSized(height: 24),
+            HeightSized(height: 32),
             Center(
               child: CustomTextRich(
-                textOne: 'ليس لديك حساب؟ ',
-                textTwo: 'إنشاء حساب',
-                onTap: () {},
+                textOne: 'تسجيل برقم ',
+                textTwo: 'الهاتف',
+                onTap: () {
+                  Navigator.pushNamed(context, LoginPhoneView.routeName);
+                },
               ),
             ),
             HeightSized(height: 12),

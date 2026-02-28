@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini_store/features/auth/presentation/views/login_phone_view.dart';
 import 'package:mini_store/features/auth/presentation/views/login_view.dart';
+import 'package:mini_store/features/auth/presentation/views/verify_phone_view.dart';
 import 'package:mini_store/features/home/domain/entities/product_entity.dart';
 import 'package:mini_store/features/home/presentation/views/product_view.dart';
 import 'package:mini_store/features/main/presentation/views/main_view.dart';
@@ -17,6 +19,13 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) =>
             ProductView(product: settings.arguments as ProductEntity),
+      );
+    case LoginPhoneView.routeName:
+      return MaterialPageRoute(builder: (context) => const LoginPhoneView());
+    case VerifyPhoneView.routeName:
+      return MaterialPageRoute(
+        builder: (context) =>
+            VerifyPhoneView(phone: settings.arguments as String),
       );
     default:
       return MaterialPageRoute(

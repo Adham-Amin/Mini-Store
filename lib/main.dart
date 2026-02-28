@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mini_store/core/di/service_locator.dart';
-import 'package:mini_store/core/functions/on_generate_route.dart';
+import 'package:mini_store/core/routes/on_generate_route.dart';
 import 'package:mini_store/core/utils/app_colors.dart';
 import 'package:mini_store/features/splash/presentation/views/splash_view.dart';
 

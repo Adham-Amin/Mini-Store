@@ -9,9 +9,10 @@ class CustomTextFormField extends StatefulWidget {
     this.isPassword = false,
     required this.hintText,
     this.onSaved,
-    this.validator,
+    this.validator, this.controller,
   });
 
+  final TextEditingController? controller;
   final bool isPassword;
   final String hintText;
   final Function(String?)? onSaved;
@@ -27,6 +28,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       onSaved: widget.onSaved,
       style: AppStyles.textRegular16,
       obscureText: widget.isPassword ? isObscureText : false,
